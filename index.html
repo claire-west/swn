@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stars Without Dice</title>
+    <link id="favicon" rel="icon" href="http://claire-west.ca/favicon.ico" />
+    <link href="http://lib.claire-west.ca/vend/css/foundation.min.css" rel="stylesheet" />
+    <link href="http://lib.claire-west.ca/vend/css/foundation-icons.css" rel="stylesheet" />
+    <link href="http://lib.claire-west.ca/vend/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://apps.claire-west.ca/hub/css/style.css" rel="stylesheet"></link>
+</head>
+<body>
+<style>
+    .top-bar.sectionNav {
+        padding-top: 0;
+    }
+    .top-bar:not(.sectionNav) {
+        padding-top: 0.25rem;
+        padding-bottom: 0;
+    }
+
+    /*.top-bar {
+        background-color: #222;
+        color: #efefef;
+    }
+    .top-bar:not(.sectionNav) h5 span {
+        color: #efefef;
+    }
+    .is-dropdown-submenu.menu, .is-dropdown-submenu-parent {
+        background-color: #222;
+        border-color: #333;
+    }
+    .dropdown.menu {
+        background-color: #222;
+    }
+    #app-swn .top-bar-content .menu .input-group a:not(:last-child) {
+        border-color: #222;
+    }*/
+</style>
+<nav class="top-bar">
+    <div class="row">
+        <div class="column">
+            <h5 class="margin-bottom-0">
+                <a href="#swn">
+                    <i class="fa fa-home"></i>
+                    <span>Stars Without Dice</span>
+                </a>
+                <a class="float-right" data-open="infoDialog"><i class="fa fa-info-circle"></i></a>
+            </h5>
+        </div>
+    </div>
+</nav>
+<div id="app-swn" data-app="Stars Without Number" class="app defaultApp" hidden></div>
+<div id="infoDialog" class="reveal" data-reveal>
+    <div class="row">
+        <div class="column">
+            <h4>Stars Without Dice</h4>
+            <span>Random generators for Stars Without Number <a href="https://www.kickstarter.com/projects/1637945166/stars-without-number-revised-edition">revised edition</a></span>
+            <hr />
+            <h5>Generating a Sector</h5>
+            <p>The sector generator has the following functions:</p>
+            <ul>
+                <li>Generate a sector based on a random or user-provided seed</li>
+                <li>Rearrange the hexes (<i class="fa fa-random"></i>), reset back to the original grid (<i class="fa fa-undo"></i>)</li>
+                <li>View star and world information including population, atmosphere, biosphere, temperature, and tags</li>
+                <li>Save the hex grid as a .png image (<i class="fa fa-picture-o"></i>)</li>
+                <li>
+                    <span>Export the worlds as a .csv file (<i class="fa fa-download"></i>) to be used in Google Sheets or Excel</span>
+                    <ul>
+                        <li>When importing, be sure to select the option to not convert text to numbers or dates, leading zeroes on the hex coordinates will be removed if they're interpreted as numbers</li>
+                    </ul>
+                </li>
+                <li>The URL in your browser's address bar is unique to the current sector. Bookmark it to view the same sector again.</li>
+            </ul>
+            <hr />
+            <h5>Other Functions</h5>
+            <p>Various random tables from both the revised edition and original book can have results generated via the "Generate" menu at the upper left.</p>
+            <hr />
+        </div>
+    </div>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<script src="http://lib.claire-west.ca/vend/js/jquery.min.js"></script>
+<script src="http://lib.claire-west.ca/vend/js/foundation.min.js"></script>
+<script
+    src="http://lib.claire-west.ca/core/js/dynCore.js"
+    data-ns='{
+        "hub": "http://apps.claire-west.ca/hub"
+    }'></script>
+<script>
+    (function(dynCore) {
+        dynCore.ready(function(modules) {
+            dynCore.require('hub.appHub');
+        });
+    })(window.dynCore);
+</script>
+</body>
+</html>
